@@ -164,7 +164,5 @@ def get_git_provider_with_context(pr_url) -> GitProvider:
             if is_context_env:
                 context["git_provider"] = {pr_url: git_provider}
             return git_provider
-        except ImportError:
-            raise
         except Exception as e:
             raise ValueError(f"Failed to get git provider for {pr_url}") from e
